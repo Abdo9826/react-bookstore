@@ -3,13 +3,13 @@ const initState = [];
 
 export const CheckStatus = () => ({ type: CHECK_STATUS });
 
-const categoriesReducer = (state = initState, action) => {
+const categoryReducer = (state = initState, action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return 'Under construction';
+      return ['Under construction'];
     default:
       return state;
   }
 };
 
-export default categoriesReducer;
+export default categoryReducer;

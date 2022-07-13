@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Book from './book';
 import Form from './form';
 
-class Books extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+function Books() {
+  const books = useSelector((state) => state.books);
 
-  render() {
-    return (
+  return (
+    <div>
       <div>
-        <Book />
-        <Form />
+        {books.map((book) => (
+          <Book
+            title={book.title}
+            key={book.id}
+            author={book.author}
+            id={book.id}
+          />
+        ))}
       </div>
-    );
-  }
+      <Form />
+    </div>
+  );
 }
 
 export default Books;
