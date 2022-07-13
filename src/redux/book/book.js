@@ -1,6 +1,22 @@
 const BOOK_ADDED = 'BOOK_ADDED';
 const BOOK_REMOVED = 'BOOK_REMOVED';
-const initState = [];
+const initState = [
+  {
+    title: 'Facebook',
+    author: 'Mark',
+    id: '1',
+  },
+  {
+    title: 'Apple',
+    author: 'Steve jobs',
+    id: '2',
+  },
+  {
+    title: 'Youtube',
+    author: 'someone',
+    id: '3',
+  },
+];
 
 export const AddBook = (book) => ({ type: BOOK_ADDED, payload: book });
 export const RemoveBook = (id) => ({ type: BOOK_REMOVED, id });

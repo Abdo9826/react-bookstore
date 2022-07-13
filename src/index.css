@@ -79,7 +79,6 @@ nav {
 }
 
 .book {
-  border: 1px solid #e8e8e8;
   padding-left: 40%;
 }
 
@@ -112,4 +111,24 @@ input {
   color: #fff;
   font-size: 16px;
   font-weight: 700;
+}
+
+.delete {
+  cursor: pointer;
+  width: 5%;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  height: 2%;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.container-book {
+  display: flex;
 }
