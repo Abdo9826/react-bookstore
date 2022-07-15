@@ -40,7 +40,11 @@ function Book({ title, author, id }) {
       <div className="chapter">
         <p className="label">CURRENT CHAPTER</p>
         <p className="current">Chapter3: A lesson learned</p>
-        <button type="button" className="delete">
+        <button
+          onClick={() => dispatch(RemoveBook(id))}
+          type="button"
+          className="delete"
+        >
           delete book
         </button>
       </div>
