@@ -6,7 +6,7 @@
 - React
 - HTML
 - CSS
-- Webpack
+- Redux
 - Git & Github
 
 ## Live Demo
