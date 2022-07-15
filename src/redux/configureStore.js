@@ -10,4 +10,3 @@ const Store = configureStore({
 });
 
 export default Store;
-// console.log(store);

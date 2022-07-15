@@ -17,6 +17,9 @@ function Nav() {
             CATEGORIES
           </Link>
         </li>
+        <li>
+          <span className="logo"> ________________</span>
+        </li>
       </ul>
     </nav>
   );
