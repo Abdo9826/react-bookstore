@@ -49,11 +49,6 @@ const initState = [
     author: 'Steve jobs',
     id: '2',
   },
-  {
-    title: 'Youtube',
-    author: 'someone',
-    id: '3',
-  },
 ];
 
 export const AddBook = (book) => ({ type: BOOK_ADDED, payload: book });
