@@ -7,11 +7,15 @@ function Book({ title, author, id }) {
   const dispatch = useDispatch();
   return (
     <div className="container-book" id={id}>
-      <h2 className="book">
-        {title}
-        _ by_
-        {author}
-      </h2>
+      <div className="book-info">
+        <h2 className="book">{title}</h2>
+        <h4>{author}</h4>
+      </div>
+      <div className="circle-container">
+        <div className="circle" />
+        <p className="eight">8%</p>
+        <p className="complete">completed</p>
+      </div>
       <button
         type="button"
         className="delete"
