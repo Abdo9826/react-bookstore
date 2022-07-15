@@ -1,6 +1,42 @@
+/* eslint-disable camelcase */
+
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const url = (id = '') => `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Qf3rTrhGNg4ve0WH5XO8/books/${id}`;
+
+const transform = (data) => {
+  const arr = Object.entries(data);
+  let result = [];
+  arr.forEach((item) => {
+    const itemId = item[0];
+    const book = item[1][0];
+    book.item_id = itemId;
+    result = [...result, book];
+  });
+  return result;
+};
 const BOOK_ADDED = 'BOOK_ADDED';
 const BOOK_REMOVED = 'BOOK_REMOVED';
-// const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/gfdsa/books/'
+
+export const doAddBook = createAsyncThunk(BOOK_ADDED, async (book) => {
+  const response = await axios.post(url(), book);
+  const data = await response.data;
+  return { book, data };
+});
+
+export const doRemoveBook = createAsyncThunk(BOOK_REMOVED, async (id) => {
+  const response = await axios.delete(url(id), { item_id: id });
+  const message = await response.data;
+  return { id, message };
+});
+
+export const fetchBookList = createAsyncThunk(async () => {
+  const response = await axios.get(url());
+  const bookList = await response.data;
+  const bookArray = transform(bookList);
+  return bookArray;
+});
 
 const initState = [
   {
